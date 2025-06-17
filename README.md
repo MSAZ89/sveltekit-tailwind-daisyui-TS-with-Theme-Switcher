@@ -23,6 +23,13 @@ A modern, flash-free theme switcher component for SvelteKit 5 applications using
 
 1. **Clone Project or copy files** into your SvelteKit project
 
+```bash
+git clone https://github.com/MSAZ89/sveltekit-tailwind-daisyui-TS-with-Theme-Switcher.git
+cd sveltekit-tailwind-daisyui-TS-with-Theme-Switcher
+npm install
+npm run dev
+```
+
 2. **Install dependencies** (if not already installed):
 
 ```bash
