@@ -14,41 +14,19 @@ A modern, flash-free theme switcher component for SvelteKit 5 applications using
 
 ## Tech Stack
 
-- **SvelteKit 5** - Full-stack web framework
+- **SvelteKit** - Full-stack web framework
 - **TypeScript** - Type-safe JavaScript
 - **TailwindCSS 4** - Utility-first CSS framework
 - **DaisyUI** - Semantic component library for Tailwind
 
 ## Installation
 
-1. **Clone or copy the theme files** into your SvelteKit project:
-
-```bash
-src/
-├── lib/
-│   ├── components/
-│   │   └── ThemeSwitcher.svelte
-│   └── theme.svelte.ts
-├── routes/
-│   ├── +layout.svelte
-│   ├── +page.svelte
-│   └── app.css
-└── app.html
-```
+1. **Clone Project or copy files** into your SvelteKit project
 
 2. **Install dependencies** (if not already installed):
 
 ```bash
-npm install tailwindcss@next @tailwindcss/vite@next daisyui
-```
-
-3. **Configure your CSS** (`src/routes/app.css`):
-
-```css
-@import 'tailwindcss';
-@plugin "daisyui" {
-	themes: all;
-}
+npm i
 ```
 
 ## File Structure
