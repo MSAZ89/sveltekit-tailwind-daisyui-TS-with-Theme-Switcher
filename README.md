@@ -14,7 +14,7 @@ A modern, flash-free theme switcher component for SvelteKit 5 applications using
 
 ## Tech Stack
 
-- **SvelteKit** - Full-stack web framework
+- **SvelteKit 5** - Full-stack web framework
 - **TypeScript** - Type-safe JavaScript
 - **TailwindCSS 4** - Utility-first CSS framework
 - **DaisyUI** - Semantic component library for Tailwind
@@ -30,65 +30,25 @@ src/
 │   │   └── ThemeSwitcher.svelte
 │   └── theme.svelte.ts
 ├── routes/
+│   ├── +layout.svelte
+│   ├── +page.svelte
+│   └── app.css
 └── app.html
 ```
 
 2. **Install dependencies** (if not already installed):
 
 ```bash
-npm install @tailwindcss/typography daisyui
+npm install tailwindcss@next @tailwindcss/vite@next daisyui
 ```
 
-3. **Configure Tailwind** in `tailwind.config.js`:
+3. **Configure your CSS** (`src/routes/app.css`):
 
-```js
-/** @type {import('tailwindcss').Config} */
-export default {
-	content: ['./src/**/*.{html,js,svelte,ts}'],
-	theme: {
-		extend: {}
-	},
-	plugins: [require('daisyui')],
-	daisyui: {
-		themes: [
-			'light',
-			'dark',
-			'cupcake',
-			'bumblebee',
-			'emerald',
-			'corporate',
-			'synthwave',
-			'retro',
-			'cyberpunk',
-			'valentine',
-			'halloween',
-			'garden',
-			'forest',
-			'aqua',
-			'lofi',
-			'pastel',
-			'fantasy',
-			'wireframe',
-			'black',
-			'luxury',
-			'dracula',
-			'cmyk',
-			'autumn',
-			'business',
-			'acid',
-			'lemonade',
-			'night',
-			'coffee',
-			'winter',
-			'dim',
-			'nord',
-			'sunset',
-			'caramellatte',
-			'abyss',
-			'silk'
-		]
-	}
-};
+```css
+@import 'tailwindcss';
+@plugin "daisyui" {
+	themes: all;
+}
 ```
 
 ## File Structure
@@ -104,6 +64,10 @@ Reusable theme switcher component with DaisyUI styling.
 ### `src/app.html`
 
 Contains the critical theme initialization script that prevents flash-of-unstyled-content (FOUC).
+
+### `src/routes/app.css`
+
+Global CSS file where DaisyUI is imported and configured.
 
 ## Usage
 
@@ -191,11 +155,18 @@ All 35 official DaisyUI themes are supported:
 
 ### Adding Custom Themes
 
-1. **Add to Tailwind config**:
+1. **Update CSS config**:
 
-```js
-daisyui: {
-  themes: [...existingThemes, 'your-custom-theme'],
+```css
+@config {
+	plugins: {
+		daisyui: {
+			themes:
+				[ 'light',
+				'dark',
+				'your-custom-theme'];
+		}
+	}
 }
 ```
 
