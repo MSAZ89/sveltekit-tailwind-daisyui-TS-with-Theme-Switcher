@@ -14,7 +14,7 @@ A modern, flash-free theme switcher component for SvelteKit 5 applications using
 
 ## Tech Stack
 
-- **SvelteKit 5** - Full-stack web framework
+- **SvelteKit** - Full-stack web framework
 - **TypeScript** - Type-safe JavaScript
 - **TailwindCSS 4** - Utility-first CSS framework
 - **DaisyUI** - Semantic component library for Tailwind
